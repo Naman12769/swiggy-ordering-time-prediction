@@ -8,7 +8,8 @@ from sklearn.preprocessing import OneHotEncoder,LabelEncoder,MinMaxScaler,PowerT
 from sklearn.model_selection import train_test_split
 import mlflow
 import dagshub
-dagshub.init(repo_owner='Naman12769', repo_name='swiggy-delivery-time-prediction', mlflow=True)
+import dagshub
+dagshub.init(repo_owner='Naman12769', repo_name='swiggy-ordering-time-prediction', mlflow=True)
 
 from sklearn import set_config
 set_config(transform_output="pandas")
@@ -64,7 +65,7 @@ missing_cols = (
 print(missing_cols)
 
 # drop missing values
-mlflow.set_tracking_uri("https://dagshub.com/Naman12769/swiggy-delivery-time-prediction.mlflow")
+mlflow.set_tracking_uri("https://dagshub.com/Naman12769/swiggy-ordering-time-prediction.mlflow")
 mlflow.set_experiment("Exp 1 - Keep Vs Drop Missing Values")
 
 temp_df = df.copy().dropna()
